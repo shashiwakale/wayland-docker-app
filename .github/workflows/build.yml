@@ -13,6 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install dependancies
+      run: sudo apt update && sudo apt install -y libwayland-dev libxkbcommon-dev
+    - name: install glfw
+      run: git clone https://github.com/glfw/glfw.git && cd glfw && mkdir build && cd build && cmake -D GLFW_BUILD_X11=0 .. && make && sudo make install
     - name: build wayland-app
       run: mkdir build && cd build && cmake .. && make
     - name: test
