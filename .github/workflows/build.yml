@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: install glfw
-      run: git clone https://github.com/glfw/glfw.git && cd glfw && mkdir build && cd build && cmake -D GLFW_BUILD_X11=0 .. && make && make install
     - name: build wayland-app
       run: mkdir build && cd build && cmake .. && make
     - name: test
