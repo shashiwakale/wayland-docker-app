@@ -16,17 +16,10 @@ Install `libwayland-dev` and `libxkbcomman` libraries.
 apt install libwayland-dev libxkbcommon-dev
 ```
 
-### Build Base Image
-Build base image as `opengl:v1.0.0` using docker.
-This image will contain all the necessary packages which is require to build the `wayland-docker-app`.
-```bash
-docker build . -f Dockerfile -t opengl:v1.0.0
-```
-
 ### Build App Image
 Build app image as `test-app` using docker
 ```bash
-docker build . -f Dockerfile.app -t test-app
+docker build . -f Dockerfile -t test-app
 ```
 
 ### Run wayland-docker-app
